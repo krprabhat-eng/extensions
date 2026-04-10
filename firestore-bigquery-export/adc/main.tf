@@ -125,6 +125,7 @@ resource "google_cloudfunctions_function" "syncBigQuery" {
   runtime     = "nodejs22"
   project     = var.project_id
   region      = var.database_region
+  ingress_settings = "ALLOW_INTERNAL_AND_GCLB"
 
   source_archive_bucket = local.source_bucket
   source_archive_object = local.source_archive
@@ -140,6 +141,7 @@ resource "google_cloudfunctions_function" "initBigQuerySync" {
   runtime     = "nodejs22"
   project     = var.project_id
   region      = var.database_region
+  ingress_settings = "ALLOW_INTERNAL_AND_GCLB"
 
   source_archive_bucket = local.source_bucket
   source_archive_object = local.source_archive
@@ -155,6 +157,7 @@ resource "google_cloudfunctions_function" "setupBigQuerySync" {
   runtime     = "nodejs22"
   project     = var.project_id
   region      = var.database_region
+  ingress_settings = "ALLOW_INTERNAL_AND_GCLB"
 
   source_archive_bucket = local.source_bucket
   source_archive_object = local.source_archive
